@@ -42,9 +42,19 @@ def create_sqlite_db():
     conn.commit()
 
 
+def preseed_db():
+    conn = handler()
+    conn.execute(query.role_insert(), ["user", ""])
+    conn.execute(query.role_insert(), ["admin", ""])
+    conn.commit()
+
+
 def check_if_exists():
     conn = handler()
-    output = conn.execute(query.check_if_exists())
+    try:
+        output = conn.execute(query.check_if_exists())
+    except sqlite3.OperationalError:
+        return False
     if len(output.fetchall()) > 0:
         return True
     return False

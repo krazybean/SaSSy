@@ -1,5 +1,7 @@
 from sassy.cortex.app import app
 
+app.logger.debug("Why aint this working?")
+
 
 @app.route('/')
 def index():

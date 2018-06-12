@@ -11,6 +11,7 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     DEBUG = True
     ENV = 'development'
+    DATABASE = 'sassy.db'
 
 
 class TestingConfig(Config):

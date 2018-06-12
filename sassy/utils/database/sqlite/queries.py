@@ -14,7 +14,7 @@ class SqliteQueries(object):
     # Database table creation
     @staticmethod
     def create_table_cms():
-        return """CREATE TABLE "cms" (
+        return """CREATE TABLE IF NOT EXISTS "cms" (
           "id" INTEGER CONSTRAINT "pk_cms" PRIMARY KEY AUTOINCREMENT,
           "name" TEXT NOT NULL,
           "distro_url" TEXT NOT NULL,
@@ -23,7 +23,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_database_users():
-        return """CREATE TABLE "database_users" (
+        return """CREATE TABLE IF NOT EXISTS "database_users" (
           "id" INTEGER CONSTRAINT "pk_database_users" PRIMARY KEY AUTOINCREMENT,
           "database_id" INTEGER,
           "database_username" TEXT NOT NULL,
@@ -32,7 +32,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_databases():
-        return """CREATE TABLE "databases" (
+        return """CREATE TABLE IF NOT EXISTS "databases" (
           "id" INTEGER CONSTRAINT "pk_databases" PRIMARY KEY AUTOINCREMENT,
           "database_name" TEXT NOT NULL,
           "user_id" TEXT NOT NULL,
@@ -41,7 +41,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_device_attributes():
-        return """CREATE TABLE "device_attributes" (
+        return """CREATE TABLE IF NOT EXISTS "device_attributes" (
           "id" INTEGER CONSTRAINT "pk_device_attributes" PRIMARY KEY AUTOINCREMENT,
           "virtualmemory" TEXT,
           "cpu" TEXT,
@@ -51,7 +51,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_devicetype():
-        return """CREATE TABLE "devicetype" (
+        return """CREATE TABLE IF NOT EXISTS "devicetype" (
           "id" INTEGER CONSTRAINT "pk_devicetype" PRIMARY KEY AUTOINCREMENT,
           "name" TEXT NOT NULL,
           "description" TEXT
@@ -59,7 +59,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_hosts():
-        return """CREATE TABLE "hosts" (
+        return """CREATE TABLE IF NOT EXISTS "hosts" (
           "id" INTEGER CONSTRAINT "pk_hosts" PRIMARY KEY AUTOINCREMENT,
           "hostname" TEXT NOT NULL,
           "ip" TEXT,
@@ -69,7 +69,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_providers():
-        return """CREATE TABLE "providers" (
+        return """CREATE TABLE IF NOT EXISTS "providers" (
           "id" INTEGER CONSTRAINT "pk_providers" PRIMARY KEY AUTOINCREMENT,
           "provider_name" TEXT NOT NULL,
           "provider_user" TEXT NOT NULL,
@@ -79,7 +79,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_roles():
-        return """CREATE TABLE "roles" (
+        return """CREATE TABLE IF NOT EXISTS "roles" (
           "id" INTEGER CONSTRAINT "pk_roles" PRIMARY KEY AUTOINCREMENT,
           "name" TEXT NOT NULL,
           "permset" TEXT NOT NULL
@@ -87,7 +87,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_ssl():
-        return """CREATE TABLE "ssl" (
+        return """CREATE TABLE IF NOT EXISTS "ssl" (
           "id" INTEGER CONSTRAINT "pk_ssl" PRIMARY KEY AUTOINCREMENT,
           "certificate" TEXT,
           "private_key" TEXT,
@@ -102,7 +102,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_users():
-        return """CREATE TABLE "users" (
+        return """CREATE TABLE IF NOT EXISTS "users" (
           "id" INTEGER CONSTRAINT "pk_users" PRIMARY KEY AUTOINCREMENT,
           "username" TEXT NOT NULL,
           "email_address" TEXT NOT NULL,
@@ -111,7 +111,7 @@ class SqliteQueries(object):
 
     @staticmethod
     def create_table_websites():
-        return """CREATE TABLE "websites" (
+        return """CREATE TABLE IF NOT EXISTS "websites" (
           "id" INTEGER CONSTRAINT "pk_websites" PRIMARY KEY AUTOINCREMENT,
           "domain_name" TEXT NOT NULL,
           "user_id" TEXT NOT NULL,

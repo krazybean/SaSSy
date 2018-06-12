@@ -8,5 +8,7 @@ administered.
 
 from sassy.cortex.app import app
 from sassy.cortex.config import DevelopmentConfig, ProductionConfig, TestingConfig
+from sassy.utils.database.db import DatabaseConn
 
+db = DatabaseConn()
 
