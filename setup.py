@@ -34,21 +34,12 @@ setup(
     keywords='Website Hosting Development',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     # Requirements
-    install_requires=['flask'],
-    extras_require={  # Optional
+    install_requires=['flask', 'tox'],
+    extras_require={
         'dev': ['check-manifest'],
         'test': ['coverage'],
     },
-    package_data={  # Optional
-        'sample': ['package_data.dat'],
-    },
-    data_files=[('my_data', ['data/data_file'])],  # Optional
-    entry_points={  # Optional
-        'console_scripts': [
-            'sample=sample:main',
-        ],
-    },
-    project_urls={  # Optional
+    project_urls={
         'Bug Reports': 'https://github.com/krazybean/SaSSy/issues',
         'Source': 'https://github.com/krazybean/SaSSy',
     },
