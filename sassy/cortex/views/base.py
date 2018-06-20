@@ -1,9 +1,9 @@
 from sassy.cortex.app import app
+from sassy.utils import logger
 
-app.logger.debug("Why aint this working?")
+log = logger.logger
 
 
 @app.route('/')
 def index():
-    app.logger.debug("TESTINGFOO!")
     return 'Hello World!'
