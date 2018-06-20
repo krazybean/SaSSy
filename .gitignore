@@ -108,3 +108,6 @@ venv.bak/
 
 # Temp SQLite dbs
 *.db
+
+# Unittests
+SaSSy.egg-info/
