@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Check') {
       steps {
-        sh 'pip install tox && tox'
+        sh '''virtualenv --python=python3.5 ~/venv/sassy
+source ~/venv/sassy/bin/activate
+pip install -r requirements.txt
+tox'''
       }
     }
   }
