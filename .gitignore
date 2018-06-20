@@ -111,3 +111,6 @@ venv.bak/
 
 # Unittests
 SaSSy.egg-info/
+
+# Config changes
+*/env.sh
