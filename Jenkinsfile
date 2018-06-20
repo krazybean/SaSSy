@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Check') {
       steps {
-        sh 'tox'
+        sh 'pip install tox && tox'
       }
     }
   }
