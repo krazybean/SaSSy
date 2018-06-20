@@ -24,4 +24,5 @@ class TestBase(unittest.TestCase):
     def test_initial_route(self):
         client = app.test_client()
         r = client.get('/')
-        print(r.data)
+        expected = b'Hello World!'
+        self.assertEqual(expected, r.data)
