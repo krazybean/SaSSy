@@ -29,8 +29,9 @@ class TestRoutes(unittest.TestCase):
         client = app.test_client()
         r = client.get('api/')
         response = json.loads(r.data.decode())
-        expected = {'API Submodules': ['databases', 'resources', 'admin', 'users', 'websites']}
-        self.assertEqual(response, expected)
+        self.assertTrue('API Submodules' in response)
+        for element in ['databases', 'resources', 'admin', 'users', 'websites']:
+            self.assertTrue(element in response['API Submodules'])
 
     def test_api_databases(self):
         client = app.test_client()
