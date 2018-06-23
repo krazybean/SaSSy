@@ -1,6 +1,8 @@
 # SaSSy
 petite, modular web-solution architecture as a service.
 
+[![Build Status](http://krazybean.ddns.com:8080/buildStatus/icon?job=SaSSy/master)](http://krazybean.ddns.com:8080/job/SaSSy/job/master/)
+
 ## Installation
 
 ```python
