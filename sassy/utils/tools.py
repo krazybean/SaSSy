@@ -3,6 +3,13 @@ from typing import List
 
 
 def discover_files(file_path: object=__file__) -> List:
+    """ Scans the provided files base path for files to return as modules
+
+    Args:
+        file_path (:obj:): __file__ primitive for file location
+    Returns:
+        list: List of all available python files in a given subdir
+    """
     cwd = os.path.dirname(file_path)
     submodules = []
     for root, dirs, files in os.walk(cwd):
@@ -13,6 +20,13 @@ def discover_files(file_path: object=__file__) -> List:
 
 
 def discover_folders(file_path: object=__file__) -> List:
+    """ Scans the provided files base_path for sub directories as modules
+
+    Args:
+        file_path (:obj:): __file__ primitive for the file location
+    Returns:
+        list: List of all available subdirectories in a given folder
+    """
     cwd = os.path.dirname(file_path)
     submodules = []
     for root, dirs, files in os.walk(cwd):
