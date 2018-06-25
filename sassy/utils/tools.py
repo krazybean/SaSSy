@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, NewType
 
 
 def discover_files(file_path: object=__file__) -> List:
@@ -33,3 +33,18 @@ def discover_folders(file_path: object=__file__) -> List:
         for folder in dirs:
             submodules.append(folder if not folder.startswith('__') else None)
     return [sub for sub in submodules if sub]
+
+
+class Struct:
+    """
+    Used for population of objects based off a dictionary input
+    """
+    def __init__(self, name, **entries):
+        """
+
+        Args:
+            entries (dict): Takes in a dictionary object
+        """
+        self.__name__ = name
+        self.__dict__.update(entries)
+
