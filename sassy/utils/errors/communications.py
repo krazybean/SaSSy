@@ -2,6 +2,5 @@ from sassy.utils.logger import logger
 from sassy.utils.errors import SassyError
 
 
-class DatabaseConnectionError(SassyError):
+class CommunicationServiceParseError(SassyError):
     pass
-
