@@ -1,9 +1,10 @@
 import os
 from flask import Flask
+from flasgger import Swagger
 from sassy.cortex import config
 
 app = Flask(__name__)
-
+Swagger(app)
 
 # If no environment variable set then default to development
 app.config.update(**config.DevelopmentConfig.__dict__)
