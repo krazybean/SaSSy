@@ -14,8 +14,9 @@ def discover_files(file_path: object=__file__) -> List:
     submodules = []
     for root, dirs, files in os.walk(cwd):
         for filename in files:
-            submodules.append(filename if not filename.startswith('__') and \
-                                          not filename.endswith('.pyc') else None)
+            submodules.append(filename if not filename.startswith('__') and
+                                          not filename.endswith('.pyc') and
+                                          not filename.endswith('.yml') else None)
     return [sub.rstrip('.py') for sub in submodules if sub]
 
 
@@ -47,4 +48,3 @@ class Struct:
         """
         self.__name__ = name
         self.__dict__.update(entries)
-

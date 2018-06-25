@@ -1,0 +1,16 @@
+Base ADMIN API route
+The permission set of the users should have enacted the `admin` role
+in order to perform specific actions against the scoped methods.
+---
+tags:
+  - admin
+responses:
+  200:
+    description: List of submethods available to admin api
+    schema:
+      id: admin_api
+      properties:
+        AdminSubmodules:
+          type: string
+          description: The list of available sub-methods
+          default: '{"Admin Submodules": ["users"]}'
