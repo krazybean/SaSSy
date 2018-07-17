@@ -1,0 +1,18 @@
+Base ADMIN User route
+The permission set of the users should have enacted the `admin` role
+in order to perform specific actions against the scoped methods.
+
+User functionality administration
+---
+tags:
+  - admin.user
+responses:
+  200:
+    description: Admin User API
+    schema:
+      id: admin_api
+      properties:
+        AdminSubmodules:
+          type: string
+          description: The list of operation available for administrating users
+          default: '{"Users": "sassy.cortex.views.admin.users"}'
