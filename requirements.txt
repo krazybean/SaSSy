@@ -15,7 +15,7 @@ more-itertools==4.2.0
 pluggy==0.6.0
 py==1.10.0
 pytest==3.6.2
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==17.0.0
 requests==2.19.1
 six==1.11.0
